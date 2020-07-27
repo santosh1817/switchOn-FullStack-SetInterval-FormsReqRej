@@ -78,6 +78,9 @@ class RequestForm extends React.Component
             assignedUser : this.state.user,
             message : this.state.message
         }
+        let msgData = {
+            msg: `form created by user`
+        };
         axios.post(`http://localhost:3005/requestform/create`,formData,{
         
             headers:{
