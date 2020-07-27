@@ -45,7 +45,7 @@ class RequestPending extends React.Component
 
         <tbody>
         {
-          this.state.pendingForms.filter(((reqForm)=>reqForm.status==='pending') ).map(form =>{
+          this.state.pendingForms.filter(((reqForm)=>reqForm.status==='pending')).slice(0,5).map(form =>{
             return (
               <tr key ={form._id}>
                 <td> { form.createdBy.username } </td>

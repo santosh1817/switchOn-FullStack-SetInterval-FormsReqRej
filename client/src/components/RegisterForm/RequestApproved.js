@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import MsgWindow from '../MsgWindow/MsgWindow' 
 
 class RequestApproved extends React.Component
 {
@@ -30,6 +31,7 @@ class RequestApproved extends React.Component
         //console.log(this.state.approvedForms)
         return(
             <div>
+                
                 <h1> Approved Forms </h1>
                 
         <table border="2">
@@ -45,7 +47,7 @@ class RequestApproved extends React.Component
 
         <tbody> 
         {
-          this.state.approvedForms.filter(((reqForm)=>reqForm.status==='approved')).map(form =>{
+          this.state.approvedForms.filter(((reqForm)=>reqForm.status==='approved')).slice(0,5).map(form =>{
             return (
               <tr key ={form._id}>
                 <td> { form.createdBy.username } </td>
@@ -62,6 +64,8 @@ class RequestApproved extends React.Component
         
         </tbody>
         </table>
+
+        <MsgWindow/>
         </div>
 
         )

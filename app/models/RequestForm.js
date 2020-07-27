@@ -1,7 +1,5 @@
 const mongoose=require('mongoose')
 const validator=require('validator')
-const bcryptjs=require('bcryptjs')
-const jwt=require('jsonwebtoken')
 const Schema=mongoose.Schema
 
 const requestFormSchema=new Schema({
