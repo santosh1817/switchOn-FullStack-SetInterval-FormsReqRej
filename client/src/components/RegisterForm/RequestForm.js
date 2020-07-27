@@ -87,6 +87,11 @@ class RequestForm extends React.Component
         })
         .then(response => {
             console.log(response)
+            axios.post(`http://localhost:3005/notification/create`, msgData, {
+            headers: {
+              'x-auth': localStorage.getItem('token')
+            }
+            })
             this.props.history.push('/requestform/pending')
         })
 
